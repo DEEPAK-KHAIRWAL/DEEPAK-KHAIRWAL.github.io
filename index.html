@@ -3,7 +3,7 @@
 <head>
 
 <title>Sports Adda</title>
-<link rel="shortcut icon" type="image/png" href="pic.jpg"/>
+<link rel="shortcut icon" type="image/png" href="images/pic.jpg"/>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,14 +21,14 @@
             $(".dropdown dt a").click(function() {
                 $(".dropdown dd ul").toggle();
             });
-                        
+
             $(".dropdown dd ul li a").click(function() {
                 var text = $(this).html();
                 $(".dropdown dt a span").html(text);
                 $(".dropdown dd ul").hide();
                 $("#result").html("Selected value is: " + getSelectedValue("sample"));
             });
-                        
+
             function getSelectedValue(id) {
                 return $("#" + id).find("dt a span.value").html();
             }
@@ -46,8 +46,8 @@
         });
      </script>
 </head>
-<body style="background-color:powderblue">
-	<div class="header" style="position:sticky;top:0;z-index:1">
+<body style="background-color: powderblue">
+	<div class="header" style="position:sticky;top:0;z-index:100">
 		<div class="container">
 			<div class="row">
 			  <div class="col-md-12">
@@ -64,64 +64,51 @@
 									<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
-				    </div>							
+				    </div>
 	    		    <div class="clear"></div>
 	    	    </div>
 	            <div class="header_right">
-	    		  
+
 				          	  <div class="login_buttons">
 							 <div class="login_button"><a href="login.html">Login</a></div>
 							 <div class="clear"></div>
 						  </div>
 						  <div class="clear"></div>
-						</ul>
-					 </li>
-				   </ul>
-							 
-							 
-				          	
 
-						  <div class="clear"></div>
-						</ul>
-					 </li>
-				   </ul>
-		           <div class="clear"></div>
 	       </div>
 	      </div>
 		 </div>
 	    </div>
 	</div>
-	<div class="banner">
+	<div class="banner" style="z-index:-1">
 	<!-- start slider -->
        <div id="fwslider">
          <div class="slider_container">
-            <div class="slide"> 
+            <div class="slide">
                 <!-- Slide image -->
                <img src="images/ivsz.jpg" class="img-responsive" alt=""/>
                 <!-- /Slide image -->
                 <!-- Texts container -->
-                <div class="slide_content">
-                    
-                </div>
+
                <!-- /Texts container -->
             </div>
             <!-- /Duplicate to create more slides -->
             <div class="slide">
                <img src="images/la liga.jpg" class="img-responsive" alt=""/>
                 <div class="slide_content">
-                    
+
                 </div>
             </div>
 			<div class="slide">
                <img src="images/australian.jpg" class="img-responsive" alt=""/>
                 <div class="slide_content">
-                   
+
                 </div>
             </div>
-			
+
             <!--/slide -->
         </div>
-		
+
         <div class="timers"></div>
         <div class="slidePrev"><span></span></div>
         <div class="slideNext"><span></span></div>
@@ -134,8 +121,8 @@
 			<p>Choose your Favorite Sports</p>
 			<br>
 				<ul id="flexiselDemo3">
-				
-				
+
+
 				<li><a href="tennisranking.html"><img src="images/tennis.jpg" /></li>
 				<li><a href="golfranking.html"><img src="images/golf.jpg" /></li>
 				<li><a href="foxnews.html"> <img src="images/badminton.jpg" /></li>
@@ -144,32 +131,32 @@
 				<li><a href="bbcnews.html"> <img src="images/hockey.jpg" /></li>
 				<li><a href="espnnews.html"> <img src="images/baseball.jpg" /></li>
 				</ul>
-		
+
 			<script type="text/javascript">
 		$(window).load(function() {
 			$("#flexiselDemo3").flexisel({
 				visibleItems: 5,
 				animationSpeed: 1000,
 				autoPlay: true,
-				autoPlaySpeed: 3000,    		
+				autoPlaySpeed: 3000,
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
-		    	responsiveBreakpoints: { 
-		    		portrait: { 
+		    	responsiveBreakpoints: {
+		    		portrait: {
 		    			changePoint:480,
 		    			visibleItems: 1
-		    		}, 
-		    		landscape: { 
+		    		},
+		    		landscape: {
 		    			changePoint:640,
 		    			visibleItems: 2
 		    		},
-		    		tablet: { 
+		    		tablet: {
 		    			changePoint:768,
 		    			visibleItems: 3
 		    		}
 		    	}
 		    });
-		    
+
 		});
 		</script>
 		<script type="text/javascript" src="js/jquery.flexisel.js"></script>
@@ -191,7 +178,7 @@
 			<h3 class="m_3" >Trending Videos</h3><br>
 			  <div class="row">
 				<div class="col-md-3 top_box">
-				  <div class="view view-ninth"><a href="https://www.youtube.com/watch?v=yIPbwvm6QLs">
+				  <div class="view view-ninth text-center"><a href="https://www.youtube.com/watch?v=yIPbwvm6QLs">
                     <img src="images/viratinterview.jpg" class="img-responsive" alt=""/>
                     <div class="mask mask-1"> </div>
                     <div class="mask mask-2"> </div>
@@ -223,7 +210,7 @@
                     <img src="images/bestofgolf.jpg" class="img-responsive" alt=""/>
                     <div class="mask mask-1"> </div>
                     <div class="mask mask-2"> </div>
-                      
+
                      </a> </div>
                    <h4 class="m_4"><a href="https://www.youtube.com/watch?v=OuAzIKni2yg"><center>Best of Golf </center></a></h4>
                    <p class="m_5"></p>
@@ -252,21 +239,25 @@
 				    			<input type="submit" value="Go">
 				    		   </form>
 					        </div>
-							<ul class="social">	
-							  <li class="facebook"><a target='blank' href="https://www.facebook.com"><span> </span></a></li>
+							<ul class="social">
+							  <li class="facebook"><a target='blank' href="https://www.facebook.com/deepaak.khairwal"><span> </span></a></li>
 							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
-							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>	
-							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
-							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com/khairwaldeepak"><span> </span></a></li>
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>
 						    </ul>
-		   					
+
 						</ul>
 					</div>
-					
+
 				</div>
-			
+
 			</div><br><br><br>
-			<center style="color:white;font-size:10px">&copy 2018 Sportsadda.com, Times internet Limited. All rights reserved|deepakkhairwal12@gmail.com</center>
+			<center style="color:white;font-size:10px">&copy <span id='dt'></span> Sportsadda.com . All rights reserved | deepakkhairwal12@gmail.com</center>
 		</div>
-</body>	
+    <script>
+      var d=new Date;
+      document.getElementById('dt').innerHTML=d.getFullYear();
+     </script>
+</body>
 </html>
