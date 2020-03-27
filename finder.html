@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Sports Adda</title>
+<link rel="shortcut icon" type="image/png" href="pic.jpg"/>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/fwslider.css" media="all">
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/fwslider.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--end slider --><script type="text/javascript">
+
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+		
+		
+
+		
+		
+		
+		function player(){
+		 x=document.getElementById("pn");
+		 
+		 var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    
+        var myObj2 = JSON.parse(this.responseText);
+        y=myObj2.data[0].pid;
+};
+xmlhttp.open("GET", "https://cricapi.com/api/playerFinder?apikey=RswGGACQyifIzKv5lV39cKKq9f93&name="+x.value, true);
+xmlhttp.send();
+		 
+		 
+		
+		var xmlhttp2 = new XMLHttpRequest();
+xmlhttp2.onreadystatechange = function() {
+    
+        var myObj = JSON.parse(this.responseText);
+		
+		document.getElementById("a").innerHTML =     myObj.fullName;
+		document.getElementById("b").innerHTML =     myObj.country;
+		document.getElementById("c").innerHTML =     myObj.currentAge;
+		document.getElementById("d").innerHTML =     myObj.battingStyle;
+		document.getElementById("e").innerHTML =     myObj.bowlingStyle;
+		document.getElementById("f").innerHTML =     myObj.majorTeams;
+		document.getElementById("g").innerHTML =     myObj.playingRole;
+		document.getElementById("name").innerHTML =     myObj.name;
+		document.getElementById("pf").innerHTML =     myObj.profile;
+		document.getElementById("im").src =     myObj.imageURL;
+		document.getElementById("blttm").innerHTML=     myObj.data.bowling.T20Is.Mat;
+		document.getElementById("bltti").innerHTML=     myObj.data.bowling.T20Is.Inns;
+		document.getElementById("blttbl").innerHTML=     myObj.data.bowling.T20Is.Balls;
+		document.getElementById("blttw").innerHTML=     myObj.data.bowling.T20Is.Wkts;
+		document.getElementById("bltta").innerHTML=     myObj.data.bowling.T20Is.Ave;
+		document.getElementById("bltte").innerHTML=     myObj.data.bowling.T20Is.Econ;
+		document.getElementById("blttbs").innerHTML=     myObj.data.bowling.T20Is.BBI;
+        document.getElementById("blom").innerHTML=     myObj.data.bowling.ODIs.Mat;
+		document.getElementById("bloi").innerHTML=     myObj.data.bowling.ODIs.Inns;
+		document.getElementById("blobl").innerHTML=     myObj.data.bowling.ODIs.Balls;
+		document.getElementById("blow").innerHTML=     myObj.data.bowling.ODIs.Wkts;
+		document.getElementById("bloa").innerHTML=     myObj.data.bowling.ODIs.Ave;
+		document.getElementById("bloe").innerHTML=     myObj.data.bowling.ODIs.Econ;
+		document.getElementById("blobs").innerHTML=     myObj.data.bowling.ODIs.BBI;
+        document.getElementById("bltsm").innerHTML=     myObj.data.bowling.tests.Mat;
+		document.getElementById("bltsi").innerHTML=     myObj.data.bowling.tests.Inns;
+		document.getElementById("bltsbl").innerHTML=     myObj.data.bowling.tests.Balls;
+		document.getElementById("bltsw").innerHTML=     myObj.data.bowling.tests.Wkts;
+		document.getElementById("bltsa").innerHTML=     myObj.data.bowling.tests.Ave;
+		document.getElementById("bltse").innerHTML=     myObj.data.bowling.tests.Econ;
+		document.getElementById("bltsbs").innerHTML=     myObj.data.bowling.tests.BBI;
+		document.getElementById("btttm").innerHTML=     myObj.data.batting.T20Is.Mat;
+		document.getElementById("bttti").innerHTML=     myObj.data.batting.T20Is.Inns;
+		document.getElementById("btttr").innerHTML=     myObj.data.batting.T20Is.Runs;
+		document.getElementById("bttta").innerHTML=     myObj.data.batting.T20Is.Ave;
+		document.getElementById("bttts").innerHTML=     myObj.data.batting.T20Is.SR;
+		document.getElementById("bttth").innerHTML=     myObj.data.batting.T20Is.HS;
+		document.getElementById("bttt1").innerHTML=     myObj.data.batting.T20Is['100'];
+		document.getElementById("bttt5").innerHTML=     myObj.data.batting.T20Is['50'];
+		document.getElementById("btom").innerHTML=     myObj.data.batting.ODIs.Mat;
+		document.getElementById("btoi").innerHTML=     myObj.data.batting.ODIs.Inns;
+		document.getElementById("btor").innerHTML=     myObj.data.batting.ODIs.Runs;
+		document.getElementById("btoa").innerHTML=     myObj.data.batting.ODIs.Ave;
+		document.getElementById("btos").innerHTML=     myObj.data.batting.ODIs.SR;
+		document.getElementById("btoh").innerHTML=     myObj.data.batting.ODIs.HS;
+		document.getElementById("bto1").innerHTML=     myObj.data.batting.ODIs['100'];
+		document.getElementById("bto5").innerHTML=     myObj.data.batting.ODIs['50'];
+		document.getElementById("bttsm").innerHTML=     myObj.data.batting.tests.Mat;
+		document.getElementById("bttsi").innerHTML=     myObj.data.batting.tests.Inns;
+		document.getElementById("bttsr").innerHTML=     myObj.data.batting.tests.Runs;
+		document.getElementById("bttsa").innerHTML=     myObj.data.batting.tests.Ave;
+		document.getElementById("bttss").innerHTML=     myObj.data.batting.tests.SR;
+		document.getElementById("bttsh").innerHTML=     myObj.data.batting.tests.HS;
+		document.getElementById("btts1").innerHTML=     myObj.data.batting.tests['100'];
+		document.getElementById("btts5").innerHTML=     myObj.data.batting.tests['50'];
+		
+		
+    
+};
+xmlhttp2.open("GET", "https://cricapi.com/api/playerStats?apikey=RswGGACQyifIzKv5lV39cKKq9f93&pid="+y, true);
+xmlhttp2.send();
+}
+
+
+     </script>
+<style>
+
+
+
+
+nav{
+  float: left; 
+  clear: both;
+  border:1px solid black;
+  margin-left: 20px;
+  width:100%
+  background: #eee;
+   background-color: #4CAF50;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#a1{
+background-color: #1abc9c;
+}
+nav li{
+	float: none; 
+  width: 100%;
+}
+
+nav li a{
+  display: block; 
+  width: 100%; 
+  padding: 20px; 
+  border-left: 5px solid; 
+  position: relative; 
+  z-index: 2;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+}
+	
+nav li a:hover{ border-bottom: 0px; color: #fff;text-decoration:none}
+nav li:first-child a{ border-left: 10px solid #3498db; }
+nav li:nth-child(2) a{ border-left: 10px solid #ffd071; }
+nav li:nth-child(3) a{ border-left: 10px solid #f0776c; }
+nav li:nth-child(4) a{ border-left: 10px solid  #ccff66; }
+nav li:last-child a{ border-left: 10px solid #1abc9c; }
+
+nav li a:after { 
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.3s ease 0s; 
+  -webkit-transition: all 0.3s ease 0s; 
+  z-index: -1;
+}
+
+nav li a:hover:after{ width: 100%; }
+nav li:first-child a:after{ background: #3498db; }
+nav li:nth-child(2) a:after{ background: #ffd071; }
+nav li:nth-child(3) a:after{ background: #f0776c; }
+nav li:nth-child(4) a:after{ background:  #ccff66; }
+nav li:last-child a:after{ background: #1abc9c; }
+
+
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
+
+
+
+
+
+table, td, th {    
+    border: 1px solid black;
+    text-align: center;
+	margin:10px;
+	
+	
+	
+}
+
+table {
+    
+	
+    border-collapse: collapse;
+    width: 98%;
+	background-color:white
+	
+}
+
+th, td {
+    padding: 15px;
+}
+
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover {background-color:#f5f5f5;}
+
+
+#pn, select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 12px 25%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button.b {
+    width: 25%;
+   background-color: #4CAF50; 
+    color: black; 
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+	position: relative;
+}
+
+
+
+
+button.b:hover {
+    background-color: #40AF10;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+button.b:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+button.b:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+ h1{
+       font-size: 40px;
+       font-style: oblique;
+       font-family: monospace;
+       text-align: center;
+       text-decoration: underline;
+	   text-shadow: 3px 2px red;
+	   font-weight: bold;
+	   
+     }
+     h3{
+	   text-align: center;
+       font-size: 22px;
+       font-family: monospace;
+       text-decoration: underline;
+	   text-shadow: 2px 1px seagreen;
+	   font-weight: bold;
+     }
+
+     p{
+       font-size: 16px;
+       font-family: monospace;
+	   font-weight: 900;
+	   text-align:justify;
+	   margin-left: 30px;
+       margin-right:30px;
+     }
+     img{
+      height:300px;
+      width:300px;
+      border:1px;
+      display:block;
+      margin: auto;
+     }
+
+</style>
+</head>
+
+<body style="background-color:powderblue">
+	<div class="header" style="position:sticky;top:0;z-index:1">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+						    <ul class="nav" id="nav">
+							<li><a href="index.html">Home</a></li>
+						    	<li><a href="news.html">News</a></li>
+						    	<li><a href="fixtures.html">Cricket</a></li>
+						    	<li><a href="ranking.html">Ranking</a></li>
+						    	<li><a href="players.html">Players</a></li>
+						    	<li><a href="LiveScore.html">Live Scores</a></li>
+									<div class="clear"></div>
+							</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+				    </div>							
+	    		    <div class="clear"></div>
+	    	    </div>
+	            <div class="header_right">
+	    		  
+				          	  <div class="login_buttons">
+							 <div class="login_button"><a href="login.html">Login</a></div>
+							 <div class="clear"></div>
+						  </div>
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+							 
+							 
+				          	
+
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+		           <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	</div><br><br><br>
+	<!-- YAHA SE SHURU-->&nbsp
+	<div style="display:inline-block;float:left;"> 
+	<nav > 
+	
+	<ul >
+  <li ><a   href="fixtures.html">New Matches</a></li>
+  <li  ><a  href="oldmatch.html">Old Matches</a></li>
+  <li  ><a href="score.html">Cricket Score</a></li>
+  <li  ><a  href="calendar.html">Match Calendar</a></li>
+  
+  <li  ><a id='a1' href="finder.html">Player Finder</a></li>
+</ul></nav></div>
+	<div style="display:inline-block;width:79%"> <br>
+	
+	 <input type="text" id="pn"  placeholder="Enter Player name" autocomplete = 'on'>
+	 <center><button class='b' onclick="player()">Double click to get player details</button></center><br>
+	
+	
+	<b><h1 id='name'></h1></b>
+  <img src="#" align="middel" id='im'><br>
+  <p id='pf'></p><br>
+  </div>
+	<br>
+	<table>
+	<tr>
+	<th>Full Name</th>
+	<th>Country</th>
+	<th>Age</th>
+	<th>Batting Style</th>
+	<th>Bowling Style</th>
+	<th>Teams</th>
+	<th>Playing Role</th>
+	</tr>
+	<tr>
+	<td id='a'></td>
+	<td id='b'></td>
+	<td id='c'></td>
+	<td id='d'></td>
+	<td id='e'></td>
+	<td id='f'></td>
+	<td id='g'></td>
+	</tr>
+	</table>
+	
+	<br>
+	<h1>Bowling Statistics</h1><br>
+	<h3>T20Is</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Balls</th>
+	<th>Wickets</th>
+	<th>Average</th>
+	<th>Ecocomy</th>
+	<th>Best</th>
+	</tr>
+	<tr>
+	<td id='blttm'></td>
+	<td id='bltti'></td>
+	<td id='blttbl'></td>
+	<td id='blttw'> </td>
+	<td id='bltta'></td>
+	<td id='bltte'></td>
+	<td id='blttbs'></td>
+	</tr>
+	</table><br>
+	<h3>ODIs</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Balls</th>
+	<th>Wickets</th>
+	<th>Average</th>
+	<th>Ecocomy</th>
+	<th>Best</th>
+	</tr>
+	<tr>
+	<td id='blom'></td>
+	<td id='bloi'></td>
+	<td id='blobl'></td>
+	<td id='blow'> </td>
+	<td id='bloa'></td>
+	<td id='bloe'></td>
+	<td id='blobs'></td>
+	</tr>
+	
+	
+	</table><br>
+	<h3>TESTs</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Balls</th>
+	<th>Wickets</th>
+	<th>Average</th>
+	<th>Ecocomy</th>
+	<th>Best</th>
+	</tr>
+	<tr>
+	<td id='bltsm'></td>
+	<td id='bltsi'></td>
+	<td id='bltsbl'></td>
+	<td id='bltsw'> </td>
+	<td id='bltsa'></td>
+	<td id='bltse'></td>
+	<td id='bltsbs'></td>
+	</tr>
+	
+	</table><br>
+	
+	<br>
+	<h1>Batting Statistics</h1><br>
+	<h3>T20Is</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Runs</th>
+	<th>Average</th>
+	<th>Strike Rate</th>
+	<th>Highest Score</th>
+	<th>100s</th>
+	<th>50s</th>
+	</tr>
+	<tr>
+	<td id='btttm'></td>
+	<td id='bttti'></td>
+	<td id='btttr'></td>
+	<td id='bttta'> </td>
+	<td id='bttts'></td>
+	<td id='bttth'></td>
+	<td id='bttt1'></td>
+	<td id='bttt5'></td>
+	</tr>
+	
+	
+	</table><br>
+	<h3>ODIs</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Runs</th>
+	<th>Average</th>
+	<th>Strike Rate</th>
+	<th>Highest Score</th>
+	<th>100s</th>
+	<th>50s</th>
+	</tr>
+	<tr>
+	<td id='btom'></td>
+	<td id='btoi'></td>
+	<td id='btor'></td>
+	<td id='btoa'> </td>
+	<td id='btos'></td>
+	<td id='btoh'></td>
+	<td id='bto1'></td>
+	<td id='bto5'></td>
+	</tr>
+	
+	
+	</table><br>
+	<h3>TESTs</h3>
+	<table>
+	<tr>
+	<th>Matches</th>
+	<th>Innings</th>
+	<th>Runs</th>
+	<th>Average</th>
+	<th>Strike Rate</th>
+	<th>Highest Score</th>
+	<th>100s</th>
+	<th>50s</th>
+	</tr>
+	<tr>
+	<td id='bttsm'></td>
+	<td id='bttsi'></td>
+	<td id='bttsr'></td>
+	<td id='bttsa'> </td>
+	<td id='bttss'></td>
+	<td id='bttsh'></td>
+	<td id='btts1'></td>
+	<td id='btts5'></td>
+	</tr>
+	
+	</table><br>
+	
+	
+	<p style="color:powderblue">..................</p>
+	
+	<!--YAHA SE END-->
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>About</h4>
+							<li><a href="career.html">Careers and internships</a></li>
+							<li><a href="sponsor.html">Sponserships</a></li>
+							<li><a href="team.html">team</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Newsletter</h4>
+							<div class="footer_search">
+				    		   <form>
+				    			<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+				    			<input type="submit" value="Go">
+				    		   </form>
+					        </div>
+							<ul class="social">	
+							  <li class="facebook"><a target='blank' href="https://www.facebook.com"><span> </span></a></li>
+							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>	
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+						    </ul>
+		   					
+						</ul>
+					</div>
+					
+				</div>
+			
+			</div><br><br><br>
+			<center style="color:white;font-size:10px">&copy 2018 Sportsadda.com, Times internet Limited. All rights reserved|deepakkhairwal12@gmail.com</center>
+		</div>
+</body>	
+</html>	

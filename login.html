@@ -1,0 +1,251 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sports Adda</title>
+<link rel="shortcut icon" type="image/png" href="pic.jpg"/>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css1/style.css">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/fwslider.css" media="all">
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/fwslider.js"></script>
+<!--end slider --><script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+	  <style>
+
+     body{
+     background-color: powderblue;
+     }
+     </style>
+</head>
+<body>
+	<div class="header" style="position:sticky;top: 0;z-index:1">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+						    <ul class="nav" id="nav">
+						<li><a href="index.html">Home</a></li>
+						    	<li><a href="news.html">News</a></li>
+						    	<li><a href="fixtures.html">Cricket</a></li>
+						    	<li><a href="ranking.html">Ranking</a></li>
+						    	<li><a href="players.html">Players</a></li>
+						    	<li><a href="LiveScore.html">Live Scores</a></li>
+									<div class="clear"></div>
+	</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+				    </div>							
+	    		    <div class="clear"></div>
+	    	    </div>
+	            <div class="header_right">
+	    		  
+				          	 
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+		           <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	</div>
+	<!-- YAHA SE SHURU-->
+	
+	
+	
+	
+
+
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1> User Sign Up Page</h1>
+          
+          <form action="index.html" method="post" enctype="multipart/form-data">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                 Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="on" name="name" pattern="^[a-zA-Z][a-zA-Z ]{2,}"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                User Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="on" name="uname" pattern="^[a-zA-Z][a-zA-Z0-9]{2,}"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="on" name="email"/>
+          </div>
+		  
+		   <div class="field-wrap">
+            <label>
+              Place<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="on" name="place" pattern="^[a-zA-Z ]{3,}"/>
+          </div>
+          
+		  <div class="field-wrap">
+            <label>
+              Contact no.
+            </label>
+            <input type="text"required autocomplete="on" name="contact" pattern="^[789][0-9]{9}"/>
+          </div>
+		  <br>
+          <p class="forgot" style="color:white;float:left">Select a profile picture<br></p>
+		  <div class="field-wrap">
+            <label>
+             
+            </label>
+            <input type="file" required autocomplete="on" name="fileToUpload" id="fileToUpload">
+          </div>
+		  
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="on" name="pass" pattern="^[A-Za-z]\w{7,15}"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="index.html" method="post">
+          
+            <div class="field-wrap">
+            <label>
+             User Name<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="on" name="uname2" pattern="^[a-zA-Z][a-zA-Z0-9]{2,}"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" required autocomplete="on" name="pass2" pattern="^[A-Za-z]\w{7,15}"/>
+          </div>
+          
+          <p class="forgot" ><a href="index.html">Forgot Password?</a></p><br>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+<script src="js/jquery-2.1.4.js"></script>
+
+    <script  src="js/index.js"></script>
+	
+	
+	<!--YAHA SE END-->
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>About</h4>
+							<li><a href="career.html">Careers and internships</a></li>
+							<li><a href="sponsor.html">Sponserships</a></li>
+							<li><a href="team.html">team</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Newsletter</h4>
+							<div class="footer_search">
+				    		   <form>
+				    			<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}"style="display:inline" >
+				    			<input type="submit" value="Go" style="width:25%; display:inline;">
+				    		   </form>
+					        </div><br>
+							<ul class="social">	
+							  <li class="facebook"><a target='blank' href="https://www.facebook.com"><span> </span></a></li>
+							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>	
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+						    </ul>
+		   					
+						</ul>
+					</div>
+					
+				</div>
+			
+			</div><br><br><br>
+			<center style="color:white;font-size:10px">&copy 2018 Sportsadda.com, Times internet Limited. All rights reserved|deepakkhairwal12@gmail.com</center>
+		</div>
+</body>	
+</html>	

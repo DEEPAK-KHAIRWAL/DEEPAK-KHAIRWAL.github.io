@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sports Adda</title>
+<link rel="shortcut icon" type="image/png" href="pic.jpg"/>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/fwslider.css" media="all">
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/fwslider.js"></script>
+<!--end slider --><script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+		
+				var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    
+        var myObj = JSON.parse(this.responseText);
+		for( i=1;i<=10;i++)
+		{
+		document.getElementById(i+"d").innerHTML =     myObj.articles[i-1].description;
+        document.getElementById(i+"a").href =     myObj.articles[i-1].url;
+		document.getElementById(i+"t").innerHTML =     myObj.articles[i-1].title;
+		document.getElementById(i+"i").src =     myObj.articles[i-1].urlToImage;
+		}
+		
+    
+};
+xmlhttp.open("GET", "https://newsapi.org/v1/articles?source=football-italia&sortBy=latest&apiKey=9f951101e7954c349e053ea63c2cd820", true);
+xmlhttp.send();
+
+
+
+     </script>
+</head>
+<body>
+	<div class="header" style="position:sticky;top: 0;z-index:1">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+						    <ul class="nav" id="nav">
+							<li><a href="index.html">Home</a></li>
+						    	<li><a href="news.html">News</a></li>
+						    	<li><a href="fixtures.html">Cricket</a></li>
+						    	<li><a href="ranking.html">Ranking</a></li>
+						    	<li><a href="players.html">Players</a></li>
+						    	<li><a href="LiveScore.html">Live Scores</a></li>
+									<div class="clear"></div>
+							</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+				    </div>							
+	    		    <div class="clear"></div>
+	    	    </div>
+	            <div class="header_right">
+	    		  
+				          	<div class="login_buttons">
+							 <div class="login_button"><a href="login.html">Login</a></div>
+							 <div class="clear"></div>
+						  </div>
+
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+		           <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	</div>
+	<!-- YAHA SE SHURU-->
+<div style="background-color:powderblue"><br><h1 style=" text-align:center;"><b>Football News</b></h1><br> <div style="background-color:rgb(230,230,230);border:solid grey 2px;border-radius:50px;width:1000px; margin:0 auto;">
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='1a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='1i'></a></p><br><br><center><h3 id='1t'></h6><p style="margin-left:10px" id='1d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+    <br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='2a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='2i'></a></p><br><br><center><h3 id='2t'></h6><p style="margin-left:10px" id='2d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='3a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='3i'></a></p><br><br><center><h3 id='3t'></h6><p style="margin-left:10px" id='3d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+    <br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='4a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='4i'></a></p><br><br><center><h3 id='4t'></h6><p style="margin-left:10px" id='4d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='5a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='5i'></a></p><br><br><center><h3 id='5t'></h6><p style="margin-left:10px" id='5d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='6a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='6i'></a></p><br><br><center><h3 id='6t'></h6><p style="margin-left:10px" id='6d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='7a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='7i'></a></p><br><br><center><h3 id='7t'></h6><p style="margin-left:10px" id='7d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='8a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='8i'></a></p><br><br><center><h3 id='8t'></h6><p style="margin-left:10px" id='8d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='9a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='9i'></a></p><br><br><center><h3 id='9t'></h6><p style="margin-left:10px" id='9d'><br><br><hr style="	border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;"></p></center>
+	<br><br><p style="margin-left:10px"> <a href="#" style="color:black;font-size:30px;text-decoration:none;" id='10a' "><img src="#" height="300px" width="300px" style="display:block; margin-left: auto;margin-right: auto" id='10i'></a></p><br><br><center><h3 id='10t'></h6><p style="margin-left:10px" id='10d'><br><br></p></center><br>
+	 </div><br></div>
+	
+	
+	
+	
+	<!--YAHA SE END-->
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>About</h4>
+							<li><a href="career.html">Careers and internships</a></li>
+							<li><a href="sponsor.html">Sponserships</a></li>
+							<li><a href="team.html">team</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Newsletter</h4>
+							<div class="footer_search">
+				    		   <form>
+				    			<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+				    			<input type="submit" value="Go">
+				    		   </form>
+					        </div>
+							<ul class="social">	
+							  <li class="facebook"><a target='blank' href="https://www.facebook.com"><span> </span></a></li>
+							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>	
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+						    </ul>
+		   					
+						</ul>
+					</div>
+					
+				</div>
+			
+			</div><br><br><br>
+			<center style="color:white;font-size:10px">&copy 2018 Sportsadda.com, Times internet Limited. All rights reserved|deepakkhairwal12@gmail.com</center>
+		</div>
+</body>	
+</html>	
