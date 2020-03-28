@@ -48,7 +48,8 @@
     height:4px;
     position: absolute;
     bottom:15px;
-    right:0;
+    right: 45%;
+    left: 45%;
     z-index: 3;
 }
 #fwslider .timer {
