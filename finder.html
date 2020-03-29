@@ -23,14 +23,14 @@
             $(".dropdown dt a").click(function() {
                 $(".dropdown dd ul").toggle();
             });
-                        
+
             $(".dropdown dd ul li a").click(function() {
                 var text = $(this).html();
                 $(".dropdown dt a span").html(text);
                 $(".dropdown dd ul").hide();
                 $("#result").html("Selected value is: " + getSelectedValue("sample"));
             });
-                        
+
             function getSelectedValue(id) {
                 return $("#" + id).find("dt a span.value").html();
             }
@@ -46,31 +46,31 @@
                 $(".dropdown img.flag").toggleClass("flagvisibility");
             });
         });
-		
-		
 
-		
-		
-		
+
+
+
+
+
 		function player(){
 		 x=document.getElementById("pn");
-		 
+
 		 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
-    
+
         var myObj2 = JSON.parse(this.responseText);
         y=myObj2.data[0].pid;
 };
 xmlhttp.open("GET", "https://cricapi.com/api/playerFinder?apikey=RswGGACQyifIzKv5lV39cKKq9f93&name="+x.value, true);
 xmlhttp.send();
-		 
-		 
-		
+
+
+
 		var xmlhttp2 = new XMLHttpRequest();
 xmlhttp2.onreadystatechange = function() {
-    
+
         var myObj = JSON.parse(this.responseText);
-		
+
 		document.getElementById("a").innerHTML =     myObj.fullName;
 		document.getElementById("b").innerHTML =     myObj.country;
 		document.getElementById("c").innerHTML =     myObj.currentAge;
@@ -126,9 +126,9 @@ xmlhttp2.onreadystatechange = function() {
 		document.getElementById("bttsh").innerHTML=     myObj.data.batting.tests.HS;
 		document.getElementById("btts1").innerHTML=     myObj.data.batting.tests['100'];
 		document.getElementById("btts5").innerHTML=     myObj.data.batting.tests['50'];
-		
-		
-    
+
+
+
 };
 xmlhttp2.open("GET", "https://cricapi.com/api/playerStats?apikey=RswGGACQyifIzKv5lV39cKKq9f93&pid="+y, true);
 xmlhttp2.send();
@@ -142,7 +142,7 @@ xmlhttp2.send();
 
 
 nav{
-  float: left; 
+  float: left;
   clear: both;
   border:1px solid black;
   margin-left: 20px;
@@ -160,24 +160,24 @@ nav ul {
 background-color: #1abc9c;
 }
 nav li{
-	float: none; 
+	float: none;
   width: 100%;
 }
 
 nav li a{
-  display: block; 
-  width: 100%; 
-  padding: 20px; 
-  border-left: 5px solid; 
-  position: relative; 
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border-left: 5px solid;
+  position: relative;
   z-index: 2;
   text-decoration: none;
   color: black;
-  box-sizing: border-box;  
-  -moz-box-sizing: border-box;  
-  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
-	
+
 nav li a:hover{ border-bottom: 0px; color: #fff;text-decoration:none}
 nav li:first-child a{ border-left: 10px solid #3498db; }
 nav li:nth-child(2) a{ border-left: 10px solid #ffd071; }
@@ -185,15 +185,15 @@ nav li:nth-child(3) a{ border-left: 10px solid #f0776c; }
 nav li:nth-child(4) a{ border-left: 10px solid  #ccff66; }
 nav li:last-child a{ border-left: 10px solid #1abc9c; }
 
-nav li a:after { 
+nav li a:after {
   content: "";
-  height: 100%; 
-  left: 0; 
-  top: 0; 
-  width: 0px;  
-  position: absolute; 
-  transition: all 0.3s ease 0s; 
-  -webkit-transition: all 0.3s ease 0s; 
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0px;
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
   z-index: -1;
 }
 
@@ -235,22 +235,22 @@ nav li:last-child a:after{ background: #1abc9c; }
 
 
 
-table, td, th {    
+table, td, th {
     border: 1px solid black;
     text-align: center;
 	margin:10px;
-	
-	
-	
+
+
+
 }
 
 table {
-    
-	
+
+
     border-collapse: collapse;
     width: 98%;
 	background-color:white
-	
+
 }
 
 th, td {
@@ -277,8 +277,8 @@ tr:hover {background-color:#f5f5f5;}
 
 button.b {
     width: 25%;
-   background-color: #4CAF50; 
-    color: black; 
+   background-color: #4CAF50;
+    color: black;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
@@ -325,7 +325,7 @@ button.b:active:after {
        text-decoration: underline;
 	   text-shadow: 3px 2px red;
 	   font-weight: bold;
-	   
+
      }
      h3{
 	   text-align: center;
@@ -355,8 +355,8 @@ button.b:active:after {
 </style>
 </head>
 
-<body style="background-color:powderblue">
-	<div class="header" style="position:sticky;top:0;z-index:1">
+<body>
+	<div class="header" style="position:sticky;top:0;z-index:100">
 		<div class="container">
 			<div class="row">
 			  <div class="col-md-12">
@@ -373,11 +373,11 @@ button.b:active:after {
 									<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
-				    </div>							
+				    </div>
 	    		    <div class="clear"></div>
 	    	    </div>
 	            <div class="header_right">
-	    		  
+
 				          	  <div class="login_buttons">
 							 <div class="login_button"><a href="login.html">Login</a></div>
 							 <div class="clear"></div>
@@ -386,9 +386,9 @@ button.b:active:after {
 						</ul>
 					 </li>
 				   </ul>
-							 
-							 
-				          	
+
+
+
 
 						  <div class="clear"></div>
 						</ul>
@@ -401,23 +401,23 @@ button.b:active:after {
 	    </div>
 	</div><br><br><br>
 	<!-- YAHA SE SHURU-->&nbsp
-	<div style="display:inline-block;float:left;"> 
-	<nav > 
-	
+	<div style="display:inline-block;float:left;">
+	<nav >
+
 	<ul >
   <li ><a   href="fixtures.html">New Matches</a></li>
   <li  ><a  href="oldmatch.html">Old Matches</a></li>
   <li  ><a href="score.html">Cricket Score</a></li>
   <li  ><a  href="calendar.html">Match Calendar</a></li>
-  
+
   <li  ><a id='a1' href="finder.html">Player Finder</a></li>
 </ul></nav></div>
 	<div style="display:inline-block;width:79%"> <br>
-	
+
 	 <input type="text" id="pn"  placeholder="Enter Player name" autocomplete = 'on'>
 	 <center><button class='b' onclick="player()">Double click to get player details</button></center><br>
-	
-	
+
+
 	<b><h1 id='name'></h1></b>
   <img src="#" align="middel" id='im'><br>
   <p id='pf'></p><br>
@@ -443,7 +443,7 @@ button.b:active:after {
 	<td id='g'></td>
 	</tr>
 	</table>
-	
+
 	<br>
 	<h1>Bowling Statistics</h1><br>
 	<h3>T20Is</h3>
@@ -487,8 +487,8 @@ button.b:active:after {
 	<td id='bloe'></td>
 	<td id='blobs'></td>
 	</tr>
-	
-	
+
+
 	</table><br>
 	<h3>TESTs</h3>
 	<table>
@@ -510,9 +510,9 @@ button.b:active:after {
 	<td id='bltse'></td>
 	<td id='bltsbs'></td>
 	</tr>
-	
+
 	</table><br>
-	
+
 	<br>
 	<h1>Batting Statistics</h1><br>
 	<h3>T20Is</h3>
@@ -537,8 +537,8 @@ button.b:active:after {
 	<td id='bttt1'></td>
 	<td id='bttt5'></td>
 	</tr>
-	
-	
+
+
 	</table><br>
 	<h3>ODIs</h3>
 	<table>
@@ -562,8 +562,8 @@ button.b:active:after {
 	<td id='bto1'></td>
 	<td id='bto5'></td>
 	</tr>
-	
-	
+
+
 	</table><br>
 	<h3>TESTs</h3>
 	<table>
@@ -587,12 +587,10 @@ button.b:active:after {
 	<td id='btts1'></td>
 	<td id='btts5'></td>
 	</tr>
-	
+
 	</table><br>
-	
-	
-	<p style="color:powderblue">..................</p>
-	
+
+
 	<!--YAHA SE END-->
 		<div class="footer">
 			<div class="container">
@@ -615,21 +613,21 @@ button.b:active:after {
 				    			<input type="submit" value="Go">
 				    		   </form>
 					        </div>
-							<ul class="social">	
+							<ul class="social">
 							  <li class="facebook"><a target='blank' href="https://www.facebook.com"><span> </span></a></li>
 							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
-							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>	
-							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
-							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com"><span> </span></a></li>
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>
 						    </ul>
-		   					
+
 						</ul>
 					</div>
-					
+
 				</div>
-			
+
 			</div><br><br><br>
 			<center style="color:white;font-size:10px">&copy 2018 Sportsadda.com, Times internet Limited. All rights reserved|deepakkhairwal12@gmail.com</center>
 		</div>
-</body>	
-</html>	
+</body>
+</html>
