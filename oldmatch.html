@@ -72,10 +72,10 @@ nav{
   margin-left: 20px;
   width:100%
   background: #eee;
-   background-color: #4CAF50;
+   background-color: #000;
 }
 #a{
-background-color: #ffd071;
+background-color: #222;
 }
 nav ul {
   list-style: none;
@@ -96,18 +96,18 @@ nav li a{
   position: relative;
   z-index: 2;
   text-decoration: none;
-  color: black;
+  color: white;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
 nav li a:hover{ border-bottom: 0px; color: #fff;text-decoration:none}
-nav li:first-child a{ border-left: 10px solid #3498db; }
-nav li:nth-child(2) a{ border-left: 10px solid #ffd071; }
-nav li:nth-child(3) a{ border-left: 10px solid #f0776c; }
-nav li:nth-child(4) a{ border-left: 10px solid  #ccff66; }
-nav li:last-child a{ border-left: 10px solid #1abc9c; }
+nav li:first-child a{ border-left: 10px solid #000; }
+nav li:nth-child(2) a{ border-left: 10px solid #222; }
+nav li:nth-child(3) a{ border-left: 10px solid #444; }
+nav li:nth-child(4) a{ border-left: 10px solid  #666; }
+nav li:last-child a{ border-left: 10px solid #888; }
 
 nav li a:after {
   content: "";
@@ -122,11 +122,11 @@ nav li a:after {
 }
 
 nav li a:hover:after{ width: 100%; }
-nav li:first-child a:after{ background: #3498db; }
-nav li:nth-child(2) a:after{ background: #ffd071; }
-nav li:nth-child(3) a:after{ background: #f0776c; }
-nav li:nth-child(4) a:after{ background:  #ccff66; }
-nav li:last-child a:after{ background: #1abc9c; }
+nav li:first-child a:after{ background: #000; }
+nav li:nth-child(2) a:after{ background: #222; }
+nav li:nth-child(3) a:after{ background: #444; }
+nav li:nth-child(4) a:after{ background:  #666; }
+nav li:last-child a:after{ background: #888; }
 
 
 
@@ -155,7 +155,7 @@ nav li:last-child a:after{ background: #1abc9c; }
   src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
 }
 
-table, td, th {
+table, td {
     border: 1px solid black;
     text-align: center;
 	margin:10px;
@@ -179,8 +179,11 @@ th, td {
 
 
 th {
-    background-color: #4CAF50;
+    background-color: #000;
     color: white;
+    border: 1px solid white;
+    text-align: center;
+    margin:10px;
 }
 tr:hover {background-color:#f5f5f5;}
 

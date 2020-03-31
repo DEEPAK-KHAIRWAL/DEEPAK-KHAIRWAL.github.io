@@ -69,134 +69,122 @@ xmlhttp.send();
 
 
      </script>
-<style>
-nav{
-  float: left;
-  clear: both;
-  border:1px solid black;
-  margin-left: 7%;
-  width:100%;
-  background: #eee;
-   background-color: #4CAF50;
-}
-#a{
-background-color:#3498db;
-}
+     <style>
+     nav{
+       float: left;
+       clear: both;
+       border:1px solid black;
+       margin-left: 20px;
+       width:100%
+       background: #eee;
+        background-color: #000;
+     }
 
-nav ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
+     nav ul {
+       list-style: none;
+       margin: 0px;
+       padding: 0px;
+     }
 
-nav li{
-	float: none;
-  width: 100%;
-}
+     nav li{
+     	float: none;
+       width: 100%;
+     }
+     #a{
+     background-color: #000;
+     }
+     nav li a{
+       display: block;
+       width: 100%;
+       padding: 20px;
+       border-left: 5px solid;
+       position: relative;
+       z-index: 2;
+       text-decoration: none;
+       color: white;
+       box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+     }
 
-nav li a{
-  display: block;
-  width: 100%;
-  padding: 10%;
-  border-left: 5px solid;
-  position: relative;
-  z-index: 2;
-  text-decoration: none;
-  color: black;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
+     nav li a:hover{ border-bottom: 0px; color: #fff;text-decoration:none}
+     nav li:first-child a{ border-left: 10px solid #000; }
+     nav li:nth-child(2) a{ border-left: 10px solid #222; }
+     nav li:nth-child(3) a{ border-left: 10px solid #444; }
+     nav li:nth-child(4) a{ border-left: 10px solid  #666; }
+     nav li:last-child a{ border-left: 10px solid #888; }
 
-nav li a:hover{ border-bottom: 0px; color: #fff;text-decoration:none}
-nav li:first-child a{ border-left: 10px solid #3498db; }
-nav li:nth-child(2) a{ border-left: 10px solid #ffd071; }
-nav li:nth-child(3) a{ border-left: 10px solid #f0776c; }
-nav li:nth-child(4) a{ border-left: 10px solid  #ccff66; }
-nav li:last-child a{ border-left: 10px solid #1abc9c; }
+     nav li a:after {
+       content: "";
+       height: 100%;
+       left: 0;
+       top: 0;
+       width: 0px;
+       position: absolute;
+       transition: all 0.3s ease 0s;
+       -webkit-transition: all 0.3s ease 0s;
+       z-index: -1;
+     }
 
-nav li a:after {
-  content: "";
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 0px;
-  position: absolute;
-  transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  z-index: -1;
-}
-
-nav li a:hover:after{ width: 100%; }
-nav li:first-child a:after{ background: #3498db; }
-nav li:nth-child(2) a:after{ background: #ffd071; }
-nav li:nth-child(3) a:after{ background: #f0776c; }
-nav li:nth-child(4) a:after{ background:  #ccff66; }
-nav li:last-child a:after{ background: #1abc9c; }
-
+     nav li a:hover:after{ width: 100%; }
+     nav li:first-child a:after{ background: #000; }
+     nav li:nth-child(2) a:after{ background: #222; }
+     nav li:nth-child(3) a:after{ background: #444; }
+     nav li:nth-child(4) a:after{ background:  #666; }
+     nav li:last-child a:after{ background: #888; }
 
 
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
-}
 
-table, td, th {
-    border: 1px solid black;
-    text-align: center;
-	margin:1%;
+     @font-face {
+       font-family: 'Lato';
+       font-style: normal;
+       font-weight: 100;
+       src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
+     }
+     @font-face {
+       font-family: 'Lato';
+       font-style: normal;
+       font-weight: 300;
+       src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+     }
+     @font-face {
+       font-family: 'Lato';
+       font-style: normal;
+       font-weight: 400;
+       src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+     }
+     @font-face {
+       font-family: 'Lato';
+       font-style: normal;
+       font-weight: 700;
+       src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+     }
 
+     table, td {
+         border: 1px solid black;
+         text-align: center;
+     	margin:10px;
+     }
+     table {
+         border-collapse: collapse;
+         width: 98%;
+     	background-color:white
 
-}
+     }
 
-table {
+     th, td {
+         padding: 15px;
+     }
+     th {
+         background-color: #000;
+         color: white;
+         border: 1px solid white;
+         text-align: center;
+         margin:10px;
+     }
+     tr:hover {background-color:#f5f5f5;}
 
-
-    border-collapse: collapse;
-    width: 98%;
-	background-color:white
-
-}
-
-th, td {
-    padding: 2%;
-}
-@media only screen and (max-width:600px) {
-	th,td{
-		font-size:.5rem
-	}
-  table{
-    margin-top:50%
-  }
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-tr:hover {background-color:#f5f5f5;}
-
-</style>
+     </style>
 </head>
 
 <body>
@@ -245,20 +233,18 @@ tr:hover {background-color:#f5f5f5;}
 	    </div>
 	</div><br><br><br>
 	<!-- YAHA SE SHURU-->
-  <div class="container">
-  <div class="row">
-	<div class="col-md-3" style="margin-top:2.5%">
+  <div style="display:inline-block;float:left;margin-right:15px">
 	<nav>
 
 	<ul >
-  <li ><a  id='a' href="fixtures.html">New Matches</a></li>
+  <li ><a id='a' href="fixtures.html">New Matches</a></li>
   <li  ><a  href="oldmatch.html">Old Matches</a></li>
   <li  ><a href="score.html">Cricket Score</a></li>
   <li  ><a  href="calendar.html">Match Calendar</a></li>
 
   <li  ><a href="finder.html">Player Finder</a></li>
-</ul></nav></div><br>
-	<div class="col-md-8" style="margin-left:5%">
+</ul></nav></div>
+	<div style="display:inline-block;width:79%">
 	<table>
 	<tr>
 	<th>Team A</th>
@@ -350,8 +336,7 @@ tr:hover {background-color:#f5f5f5;}
 	</tr>
 </table><br>
 </div>
-</div>
-</div>
+
 
 
 	<!--YAHA SE END-->
