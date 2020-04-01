@@ -20,14 +20,14 @@
             $(".dropdown dt a").click(function() {
                 $(".dropdown dd ul").toggle();
             });
-                        
+
             $(".dropdown dd ul li a").click(function() {
                 var text = $(this).html();
                 $(".dropdown dt a span").html(text);
                 $(".dropdown dd ul").hide();
                 $("#result").html("Selected value is: " + getSelectedValue("sample"));
             });
-                        
+
             function getSelectedValue(id) {
                 return $("#" + id).find("dt a span.value").html();
             }
@@ -44,23 +44,6 @@
             });
         });
      </script>
-	 <style>
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-
-}
-
-th, td {
-    text-align: left;
-    padding: 18px;
-    font-size: 23px;
-}
-
-tr:nth-child(even){background-color:grey;}
-tr:hover {background-color: hotpink  ;}
-</style>
 </head>
 <body>
 	<div class="header" style="position:sticky;top:0;z-index:1">
@@ -80,17 +63,16 @@ tr:hover {background-color: hotpink  ;}
 									<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
-				    </div>							
+				    </div>
 	    		    <div class="clear"></div>
 	    	    </div>
 	            <div class="header_right">
-	    		  
-				          	<div class="login_buttons">
+
+                          <div class="login_buttons">
 							 <div class="login_button"><a href="login.html">Login</a></div>
 							 <div class="clear"></div>
 						  </div>
 
-						  </div>
 						  <div class="clear"></div>
 						</ul>
 					 </li>
@@ -101,56 +83,7 @@ tr:hover {background-color: hotpink  ;}
 		 </div>
 	    </div>
 	</div>
-	<table>
-  <tr>
-	<th>Rankings</th>
-    <th>NAME</th>
-	<th>Rating</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>New Zealand</td>
-	<td>125</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Pakistan</td>
-    <td>123</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>West Indies</td>
-    <td>120</td>
-  </tr>  <tr>
-    <td>4</td>
-    <td>England</td>
-    <td>119</td>
-  </tr>  <tr>
-    <td>5</td>
-    <td>India</td>
-    <td>116</td>
-  </tr>  <tr>
-    <td>6</td>
-    <td>South Africa</td>
-    <td>111</td>
-  </tr>  <tr>
-    <td>7</td>
-    <td>Australia</td>
-    <td>111</td>
-  </tr>  <tr>
-    <td>8</td>
-    <td>Sri Lanka</td>
-  <td>91</td>
-  </tr>
-  <tr>
-	<td>9</td>
-    <td>Afghanistan</td>
-    <td>86</td>
-  </tr>  <tr>
-    <td>10</td>
-    <td>Bangladesh</td>
-    <td>77</td>
-  </tr></table>
+	<iframe src="http://tv.mylivecricket.biz" width="100%" height="800" frameborder="0"></iframe>
 		<div class="footer">
 			<div class="container">
 				<div class="row">
@@ -172,21 +105,21 @@ tr:hover {background-color: hotpink  ;}
 				    			<input type="submit" value="Go">
 				    		   </form>
 					        </div>
-							<ul class="social">	
+							<ul class="social">
 							  <li class="facebook"><a target='blank' href="https://www.facebook.com/deepaak.khairwal"><span> </span></a></li>
 							  <li class="twitter"><a target='blank' href="https://twitter.com"><span> </span></a></li>
-							  <li class="instagram"><a target='blank' href="https://www.instagram.com/khairwaldeepak"><span> </span></a></li>	
-							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>	
-							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>										  				
+							  <li class="instagram"><a target='blank' href="https://www.instagram.com/khairwaldeepak"><span> </span></a></li>
+							  <li class="pinterest"><a target='blank' href="https://in.pinterest.com"><span> </span></a></li>
+							  <li class="youtube"><a target='blank' href="https://www.youtube.com/"><span> </span></a></li>
 						    </ul>
-		   					
+
 						</ul>
 					</div>
-					
+
 				</div>
-			
+
 			</div><br><br><br>
 			<center style="color:white;font-size:10px">&copy <span id='dt'></span> Sportsadda.com . All rights reserved | deepakkhairwal12@gmail.com</center>
 		</div>
-<script> var d=new Date; document.getElementById('dt').innerHTML=d.getFullYear();</script> </body>	
-</html>	
+<script> var d=new Date; document.getElementById('dt').innerHTML=d.getFullYear();</script> </body>
+</html>

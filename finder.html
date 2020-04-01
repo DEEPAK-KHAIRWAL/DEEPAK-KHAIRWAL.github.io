@@ -57,18 +57,18 @@
 
 		 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
-
+        alert(' 1st section');
         var myObj2 = JSON.parse(this.responseText);
         y=myObj2.data[0].pid;
 };
 xmlhttp.open("GET", "https://cricapi.com/api/playerFinder?apikey=RswGGACQyifIzKv5lV39cKKq9f93&name="+x.value, true);
 xmlhttp.send();
 
-
+alert(' 2nd section');
 
 		var xmlhttp2 = new XMLHttpRequest();
 xmlhttp2.onreadystatechange = function() {
-
+alert(' 3rd section');
         var myObj = JSON.parse(this.responseText);
 
 		document.getElementById("a").innerHTML =     myObj.fullName;
@@ -134,13 +134,69 @@ xmlhttp2.open("GET", "https://cricapi.com/api/playerStats?apikey=RswGGACQyifIzKv
 xmlhttp2.send();
 }
 
-
-$(document).ready(function()
-{
-  $("#pl").click(function(){
-    player();
-    player();
+$(document).ready(function(){
+$(".b").click(function(){
+  x=document.getElementById("pn");
+  $.getJSON("https://cricapi.com/api/playerFinder?apikey=RswGGACQyifIzKv5lV39cKKq9f93&name="+x.value, function(result){
+  $.getJSON("https://cricapi.com/api/playerStats?apikey=RswGGACQyifIzKv5lV39cKKq9f93&pid="+result.data[0].pid, function(myObj){
+    document.getElementById("a").innerHTML =     myObj.fullName;
+    document.getElementById("b").innerHTML =     myObj.country;
+    document.getElementById("c").innerHTML =     myObj.currentAge;
+    document.getElementById("d").innerHTML =     myObj.battingStyle;
+    document.getElementById("e").innerHTML =     myObj.bowlingStyle;
+    document.getElementById("f").innerHTML =     myObj.majorTeams;
+    document.getElementById("g").innerHTML =     myObj.playingRole;
+    document.getElementById("name").innerHTML =     myObj.name;
+    document.getElementById("pf").innerHTML =     myObj.profile;
+    document.getElementById("im").src =     myObj.imageURL;
+    document.getElementById("blttm").innerHTML=     myObj.data.bowling.T20Is.Mat;
+    document.getElementById("bltti").innerHTML=     myObj.data.bowling.T20Is.Inns;
+    document.getElementById("blttbl").innerHTML=     myObj.data.bowling.T20Is.Balls;
+    document.getElementById("blttw").innerHTML=     myObj.data.bowling.T20Is.Wkts;
+    document.getElementById("bltta").innerHTML=     myObj.data.bowling.T20Is.Ave;
+    document.getElementById("bltte").innerHTML=     myObj.data.bowling.T20Is.Econ;
+    document.getElementById("blttbs").innerHTML=     myObj.data.bowling.T20Is.BBI;
+        document.getElementById("blom").innerHTML=     myObj.data.bowling.ODIs.Mat;
+    document.getElementById("bloi").innerHTML=     myObj.data.bowling.ODIs.Inns;
+    document.getElementById("blobl").innerHTML=     myObj.data.bowling.ODIs.Balls;
+    document.getElementById("blow").innerHTML=     myObj.data.bowling.ODIs.Wkts;
+    document.getElementById("bloa").innerHTML=     myObj.data.bowling.ODIs.Ave;
+    document.getElementById("bloe").innerHTML=     myObj.data.bowling.ODIs.Econ;
+    document.getElementById("blobs").innerHTML=     myObj.data.bowling.ODIs.BBI;
+        document.getElementById("bltsm").innerHTML=     myObj.data.bowling.tests.Mat;
+    document.getElementById("bltsi").innerHTML=     myObj.data.bowling.tests.Inns;
+    document.getElementById("bltsbl").innerHTML=     myObj.data.bowling.tests.Balls;
+    document.getElementById("bltsw").innerHTML=     myObj.data.bowling.tests.Wkts;
+    document.getElementById("bltsa").innerHTML=     myObj.data.bowling.tests.Ave;
+    document.getElementById("bltse").innerHTML=     myObj.data.bowling.tests.Econ;
+    document.getElementById("bltsbs").innerHTML=     myObj.data.bowling.tests.BBI;
+    document.getElementById("btttm").innerHTML=     myObj.data.batting.T20Is.Mat;
+    document.getElementById("bttti").innerHTML=     myObj.data.batting.T20Is.Inns;
+    document.getElementById("btttr").innerHTML=     myObj.data.batting.T20Is.Runs;
+    document.getElementById("bttta").innerHTML=     myObj.data.batting.T20Is.Ave;
+    document.getElementById("bttts").innerHTML=     myObj.data.batting.T20Is.SR;
+    document.getElementById("bttth").innerHTML=     myObj.data.batting.T20Is.HS;
+    document.getElementById("bttt1").innerHTML=     myObj.data.batting.T20Is['100'];
+    document.getElementById("bttt5").innerHTML=     myObj.data.batting.T20Is['50'];
+    document.getElementById("btom").innerHTML=     myObj.data.batting.ODIs.Mat;
+    document.getElementById("btoi").innerHTML=     myObj.data.batting.ODIs.Inns;
+    document.getElementById("btor").innerHTML=     myObj.data.batting.ODIs.Runs;
+    document.getElementById("btoa").innerHTML=     myObj.data.batting.ODIs.Ave;
+    document.getElementById("btos").innerHTML=     myObj.data.batting.ODIs.SR;
+    document.getElementById("btoh").innerHTML=     myObj.data.batting.ODIs.HS;
+    document.getElementById("bto1").innerHTML=     myObj.data.batting.ODIs['100'];
+    document.getElementById("bto5").innerHTML=     myObj.data.batting.ODIs['50'];
+    document.getElementById("bttsm").innerHTML=     myObj.data.batting.tests.Mat;
+    document.getElementById("bttsi").innerHTML=     myObj.data.batting.tests.Inns;
+    document.getElementById("bttsr").innerHTML=     myObj.data.batting.tests.Runs;
+    document.getElementById("bttsa").innerHTML=     myObj.data.batting.tests.Ave;
+    document.getElementById("bttss").innerHTML=     myObj.data.batting.tests.SR;
+    document.getElementById("bttsh").innerHTML=     myObj.data.batting.tests.HS;
+    document.getElementById("btts1").innerHTML=     myObj.data.batting.tests['100'];
+    document.getElementById("btts5").innerHTML=     myObj.data.batting.tests['50'];
+    });
   });
+});
 });
 
      </script>
@@ -240,40 +296,41 @@ nav li:last-child a:after{ background: #888; }
 }
 
 
-
-
-
-table, td {
+td {
+     border: 1px solid black;
+     text-align: center;
+     margin:10px;
+     padding: 15px;
+ }
+ table {
+     border-collapse: collapse;
+     width: 96%;
+    background-color:white;
     border: 1px solid black;
-    text-align: center;
-	margin:10px;
+    margin:20px;
+ }
 
+ th {
+     background-color: #000;
+     color: white;
+     border: 1px solid white;
+     text-align: center;
+     margin:10px;
+     padding: 15px;
+ }
+ tr:hover {background-color:#f5f5f5;}
 
+ #da{
+     display:inline-block;
+     float:left;
+     margin-right:15px
+ }
+ #db{
+     display:inline-block;
+     width:79%;
+     margin:auto
+ }
 
-}
-
-table {
-
-
-    border-collapse: collapse;
-    width: 98%;
-	background-color:white
-
-}
-
-th, td {
-    padding: 15px;
-}
-
-
-th {
-    background-color: #000;
-    color: white;
-    border: 1px solid white;
-    text-align: center;
-    margin:10px;
-}
-tr:hover {background-color:#f5f5f5;}
 
 
 #pn, select {
@@ -289,7 +346,7 @@ button.b {
     width: 25%;
    background-color: #000;
     color: white;
-    padding: 7px 10px;
+    padding: 1.5%;
     border: none;
     cursor: pointer;
   	transition-duration: 0.4s;
@@ -356,6 +413,44 @@ h1{
   margin: auto;
  }
 
+
+ @media only screen and (max-width:800px){
+
+ #db{
+  width:96%;
+  margin:2%
+ }
+ #da{
+  margin-left:5rem
+ }
+ #pn{
+   width:90%;
+   margin:5%
+ }
+ button.b{
+   width:50%;
+   padding-top:3%;
+   padding-bottom:3%
+ }
+ th,td{
+  margin:.2rem;
+  padding:.3rem;
+  font-size:.6rem
+ }
+ table{
+  width:98%;
+  margin-left:1%;
+  margin-right:1%
+ }
+ h1{
+   font-size:2rem
+ }
+ h3{
+   font-size:1rem
+ }
+
+ }
+
 </style>
 </head>
 
@@ -373,7 +468,7 @@ h1{
 						    	<li><a href="fixtures.html">Cricket</a></li>
 						    	<li><a href="ranking.html">Ranking</a></li>
 						    	<li><a href="players.html">Players</a></li>
-						    	<li><a href="LiveScore.html">Scores</a></li>
+						    	<li><a href="LiveScore.html">SCORES</a></li><li><a href="Live.html">LIVE</a></li>
 									<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
@@ -405,7 +500,7 @@ h1{
 	    </div>
 	</div><br><br><br>
 	<!-- YAHA SE SHURU-->&nbsp
-	<div style="display:inline-block;float:left;">
+	<div id="da">
 	<nav >
 
 	<ul >
@@ -416,10 +511,10 @@ h1{
 
   <li  ><a id='a1' href="finder.html">Player Finder</a></li>
 </ul></nav></div>
-	<div style="display:inline-block;width:79%"> <br>
+	<div id="db"> <br>
 
 	 <input type="text" id="pn"  placeholder="Enter Player name" autocomplete = 'on'>
-	 <center ><button class='b' onclick="player()" >Double click to get player details</button></center><br>
+	 <center ><button class='b'>Find player</button></center><br>
 
 
 	<b><h1 id='name'></h1></b>
