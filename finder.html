@@ -134,7 +134,13 @@ xmlhttp2.send();
 }
 
 $(document).ready(function(){
+  $("table").hide();
+  $("img.pl").hide();
+  $(".dsp").hide();
 $(".b").click(function(){
+  $("table").show();
+  $("img.pl").show();
+  $(".dsp").show();
   x=document.getElementById("pn");
   $.getJSON("https://cricapi.com/api/playerFinder?apikey=RswGGACQyifIzKv5lV39cKKq9f93&name="+x.value, function(result){
   $.getJSON("https://cricapi.com/api/playerStats?apikey=RswGGACQyifIzKv5lV39cKKq9f93&pid="+result.data[0].pid, function(myObj){
@@ -192,6 +198,7 @@ $(".b").click(function(){
     document.getElementById("bttsh").innerHTML=     myObj.data.batting.tests.HS;
     document.getElementById("btts1").innerHTML=     myObj.data.batting.tests['100'];
     document.getElementById("btts5").innerHTML=     myObj.data.batting.tests['50'];
+
     });
   });
 });
@@ -395,6 +402,7 @@ h1{
 
  }
 
+
  p{
    font-size: 1rem;
    text-align:justify;
@@ -515,7 +523,7 @@ h1{
 	 <center ><button class='b'>Find player</button></center><br>
 
 
-	<b><h1 id='name'></h1></b>
+	<b><h1 class="dsp" id='name'></h1></b>
   <img class="pl" src="#" align="middel" id='im' alt="player image"><br>
   <p id='pf'></p><br>
   </div>
@@ -538,8 +546,8 @@ h1{
 	<td id='f'></td>
 	</tr>
 </table><br><br>
-  <h1>Batting Statistics</h1><br>
-	<h3>T20Is</h3>
+  <h1 class="dsp">Batting Statistics</h1><br>
+	<h3 class="dsp">T20Is</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
@@ -564,7 +572,7 @@ h1{
 
 
 	</table><br>
-	<h3>ODIs</h3>
+	<h3 class="dsp">ODIs</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
@@ -589,7 +597,7 @@ h1{
 
 
 	</table><br>
-	<h3>TESTs</h3>
+	<h3 class="dsp">TESTs</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
@@ -614,8 +622,8 @@ h1{
 
 	</table>
 	<br><br>
-	<h1>Bowling Statistics</h1><br>
-	<h3>T20Is</h3>
+	<h1 class="dsp">Bowling Statistics</h1><br>
+	<h3 class="dsp">T20Is</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
@@ -636,7 +644,7 @@ h1{
 	<td id='blttbs'></td>
 	</tr>
 	</table><br>
-	<h3>ODIs</h3>
+	<h3 class="dsp">ODIs</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
@@ -659,7 +667,7 @@ h1{
 
 
 	</table><br>
-	<h3>TESTs</h3>
+	<h3 class="dsp">TESTs</h3>
 	<table>
 	<tr>
 	<th>Matches</th>
